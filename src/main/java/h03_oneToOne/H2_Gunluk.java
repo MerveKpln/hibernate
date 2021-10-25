@@ -1,4 +1,4 @@
-package h3_oneToOne;
+package h03_oneToOne;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -51,7 +51,7 @@ public class H2_Gunluk {
 	}
 	@Override
 	public String toString() {
-		return "H2_Gunluk [id=" + id + ", yazilar=" + yazilar + ", kisi=" + kisi + "]";
+		return "H2_Gunluk id=" + id + ", yazilar=" + yazilar + ", kisi=" + kisi + "";
 	}
 	
 	

@@ -1,4 +1,4 @@
-package h3_oneToOne;
+package h03_oneToOne;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,8 +19,8 @@ public class H3_Save {
 		
 		//gunluklerin tanimlanmasi
 		H2_Gunluk gunluk1= new H2_Gunluk(11, "Salih`in gunlugu");
-		H2_Gunluk gunluk2= new H2_Gunluk(12, "Salih`in gunlugu");
-		H2_Gunluk gunluk3= new H2_Gunluk(13, "Salih`in gunlugu");
+		H2_Gunluk gunluk2= new H2_Gunluk(12, "Hakan`in gunlugu");
+		H2_Gunluk gunluk3= new H2_Gunluk(13, "Mehmet`in gunlugu");
 		
 		//kisilerin olsuturlmasi
 		H1_Kisi kisi1 = new H1_Kisi(101,"Salih Bayram",32);
@@ -38,6 +38,8 @@ public class H3_Save {
 		session.save(kisi2);
 		session.save(kisi3);
 		
+		//fecth islemi
+		System.out.println(gunluk1.getKisi()+ " " + gunluk1.getYazilar()+" "+ kisi2.getKisiYAs() + " " + kisi2.getKisiAd());
 		
 		tx.commit();
 		 sf.close();

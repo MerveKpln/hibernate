@@ -1,4 +1,4 @@
-package h3_oneToOne;
+package h03_oneToOne;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
