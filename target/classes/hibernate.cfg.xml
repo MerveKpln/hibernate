@@ -4,6 +4,7 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+      <!-- JDBC Database connection settings -->
        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
         <property name="hibernate.connection.username">hr</property>
@@ -11,8 +12,15 @@
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
        
         <property name="hbm2ddl.auto">update</property>
-   		<property name="show_sql">true</property> 
-   		<property name="format_sql">true</property> 
+        
+        <!-- JDBC connection pool settings ... using built-in test pool
+       
+         <property name="connection.pool_size">1</property> bu sinirlanirmak icin kuallnilir-->
+        
+        <!-- Echo the SQL to stdout -->
+   		<property name="show_sql">false</property> 
+   		<property name="format_sql">false</property> 
+<!--   kullanmayacagimiz icin gorunmesini istemedigimi seylri false yaptik 14-15-18 -->
    		
    		<!-- Following 2 lines are for Second Level Cache -->
    		<property name="hibernate.cache.use_second_level_cache">false</property>         
@@ -20,4 +28,15 @@
 		<property name="hibernate.cache.provider_class">org.hibernate.cache.internal.EhcacheProvider</property>
 		
     </session-factory>
+    
 </hibernate-configuration>
+ <!-- en üstteki ilk beş property mysql kullananlar için. sql kullananlar onları silip  alttaki  bes property yi yapıştırsınlar-->
+   
+    <!--    <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
+        <property name="hibernate.connection.username">meryem</property>
+        <property name="hibernate.connection.password">1234</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521/ORCLCDB.localdomain</property>
+       
+   		--> 
+   

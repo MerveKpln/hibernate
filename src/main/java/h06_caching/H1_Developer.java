@@ -3,13 +3,19 @@ package h06_caching;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity
 @Table(name="devler")
+@Cacheable
+@Cache(region="H1_Developer", usage=CacheConcurrencyStrategy.READ_WRITE)
 public class H1_Developer {
 
 	@Id
@@ -53,6 +59,14 @@ public class H1_Developer {
 	public void setBankaListe(List<H2_Hesap> bankaListe) {
 		this.bankaListe = bankaListe;
 	}
-	
+//	@Override
+//	public String toString() {
+//		return "H1_Developer [devId=" + devId + ", devAd=" + devAd + ", devYas=" + devYas + ", bankaListe=" + bankaListe
+//				+ "]";
+//	}
+	@Override
+	public String toString() {
+		return "H1_Developer [devId=" + devId + ", devAd=" + devAd + ", devYas=" + devYas +  "]";
+	}
 	
 }
